@@ -1,0 +1,3 @@
+Implemente um sistema de gerenciamento de biblioteca que rode no console.
+O sistema deve permitir cadastrar livros, usuários, emprestar livros e devolver livros.
+Todos os dados devem ser armazenados em arquivos de texto (simulando um banco de dados simples).

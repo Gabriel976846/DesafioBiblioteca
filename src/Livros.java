@@ -1,4 +1,6 @@
 import java.time.Year;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Livros {
     private int id;
@@ -9,8 +11,10 @@ public class Livros {
     private int quantidade;
     private boolean disponibildade;
 
+    private static List<Livros> livroscadastrados = new ArrayList<>();
+
     int contadorid = 0;
-    public Livros(int id, String titulo, String genero, String autor, Year ano, int quantidade, boolean disponibildade) {
+    public Livros(int id, String titulo, String genero, String autor, Year ano, int quantidade) {
         contadorid++;
         this.id = contadorid;
         this.titulo = titulo;
@@ -18,7 +22,15 @@ public class Livros {
         this.autor = autor;
         this.ano = ano;
         this.quantidade = quantidade;
-        this.disponibildade = (quantidade > 0)?true:false;
+        this.disponibildade = quantidade > 0;
+    }
+
+    public static List<Livros> getLivroscadastrados() {
+        return livroscadastrados;
+    }
+
+    public static void setLivroscadastrados(List<Livros> livroscadastrados) {
+        Livros.livroscadastrados = livroscadastrados;
     }
 
     public int getId() {
